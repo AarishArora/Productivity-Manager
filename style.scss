@@ -3,6 +3,7 @@
     --sec: #FFFBE9;
     --tri1: #CEAB93;
     --tri2: #E3CAA5;
+    --tri3: #725f52;
 }
 
 @font-face {
@@ -227,5 +228,160 @@ main {
         border: none;
         color: var(--sec);
         border-radius: 8px;
+    }
+}
+
+/* Daily Planner Section */
+
+#page2 {
+  color: var(--sec);
+}
+
+#daily_planner {
+  width: 100%;
+  height: 90%;
+  background-color:var(--tri1);
+  padding: 2%;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content:center;
+  margin-top: 1%;
+  border-radius: 10px;
+  overflow:auto;
+  gap: 10px;
+  flex-wrap: wrap;
+  scrollbar-width: none;
+  
+}
+
+.task_chit {
+  background-color: var(--tri3);
+  width: 49%;
+  height: 13%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  
+
+  h3 {
+    position: absolute;
+    left: 1%;
+    top: 2px;
+    font-size: small;
+    color:var(--sec);
+  }
+
+  input {
+    margin-left: 7%;
+    margin-top: 5px;
+    background-color: var(--tri3);
+    color: var(--sec);
+    border: none;
+    outline: none;
+    font-size: 23px;
+    width: 100%;
+  }
+  input::placeholder {
+    color: var(--sec);
+  }
+}
+
+#moti_nav {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1%;
+}
+
+.motivation_wrapper {
+    width: 100%;
+    height: 95%;
+    // background-color: red;
+    margin: 10px 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.motivation_container {
+    width: 80%;
+    height: 80%;
+    background-color: var(--tri2);
+    border-radius: 30px;
+    position: relative;
+    border: 4px solid var(--tri3);
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    z-index: 9;
+    // gap: 2px;
+    // justify-content: space-between;
+}
+.motivation_container::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--tri2);
+    // filter: blur(100px);
+    filter: blur(100px);
+    border-radius: 30px;
+    z-index: 8;
+}
+.motivation_header{
+    width: 33%;
+    height: 18%;
+    background-color: var(--pri);
+    border-radius: 20px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2%;
+
+    h1 {
+        font-size: 34px;
+        font-weight: 900;
+        // text-decoration:underline;
+        font-style: italic;
+    }
+}
+.motivation_content{
+    width: 100%;
+    height: 55%;
+    // background-color: var(--tri1);
+    border-radius: 20px;
+    z-index: 10;
+    padding: 3% 5%;
+    // margin-bottom: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        font-size: 35px;
+        color: var(--tri3);
+        font-weight: 700;
+        text-align:center;
+    }
+}
+.motivation_author{
+    width: auto;
+    height: auto;
+    // background-color: var(--tri3);
+    border-radius: 20px;
+    z-index: 10;
+    align-self: flex-end;
+    padding-right: 2%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        font-size: 34px;
+        font-weight: 900;
+        // text-decoration:underline;
+        font-style: italic;
+        
     }
 }

@@ -83,3 +83,55 @@ Todo_submit_form.addEventListener("submit" , (e)=> {
 
 }
 Todo_List();
+
+
+
+function dailyPlanner() {
+    let daily_plannerData = JSON.parse(localStorage.getItem("daily_plannerData")) || {}
+let hours = Array.from({length:20} , (_, idx)=>{ return `${4+idx}:00 - ${idx+5}:00`})
+let daily_planner = document.querySelector("#daily_planner");
+
+// console.log(hours);
+let wholeDay = '';
+hours.forEach((hour, idx)=>{
+    let savedData = daily_plannerData[idx] || ''
+
+    wholeDay = wholeDay + `<div class="task_chit">
+                    <h3>${hour}</h3>
+                    <input id=${idx} type="text" placeholder = "..." value=${savedData}>
+                </div>`
+})
+
+
+
+daily_planner.innerHTML = wholeDay;
+
+let daily_plannerInput = document.querySelectorAll("#daily_planner input");
+
+daily_plannerInput.forEach(function(elem) {
+    elem.addEventListener("input" , () => {
+        daily_plannerData[elem.id] = elem.value;
+        localStorage.setItem("daily_plannerData", JSON.stringify(daily_plannerData))
+    })
+})
+}
+
+dailyPlanner();
+
+
+
+function motivational_quote() {
+
+    let motivational_Quote = document.querySelector(".motivation_content p");
+    let quote_author = document.querySelector(".motivation_author h1");
+
+    async function fetchQuote() {
+        let response = await fetch("https://api.quotable.io/random");
+        let data = await response.json();
+
+        motivational_Quote.innerHTML = data.content;
+        quote_author.innerHTML = '~'+ data.author
+    }
+    fetchQuote()
+}
+motivational_quote();

@@ -3,6 +3,7 @@
   --sec: #FFFBE9;
   --tri1: #CEAB93;
   --tri2: #E3CAA5;
+  --tri3: #725f52;
 }
 
 @font-face {
@@ -106,21 +107,17 @@ main {
 .btn {
   background-color: rgba(0, 0, 0, 0.552);
   color: var(--sec);
-  width: 2rem;
-  height: 2rem;
   padding: 2px 8px;
   border-radius: 20%;
   border: 1px solid rgb(0, 0, 0);
   font-weight: 600;
   font-size: medium;
-  transition: all ease 0.1s;
+  transition: all ease 0.2s;
 }
 
 .btn:hover {
   cursor: pointer;
-}
-.btn:active {
-  transform: scale(0.90);
+  transform: scale(1.2);
 }
 
 #todo_container {
@@ -148,26 +145,8 @@ main {
   gap: 3%;
   background-color: var(--tri1);
   position: relative;
-
-    .todo_box2_imp {
-      display: flex;
-      justify-content: center;
-      
-      #checkbox {
-        width: 20px;
-        margin-left: 5%;
-      }
-       
-      label {
-        margin-left: 3%;
-        padding-right: 5%;
-        font-size: medium;
-        color: black;
-        word-spacing: -1px;
-      }
-    }
 }
-#todo_box2 form #todo_input {
+#todo_box2 form input {
   height: 17%;
   outline: none;
   background-color: var(--sec);
@@ -201,7 +180,6 @@ main {
   height: 100%;
   padding: 2%;
   border-radius: 5%;
-  overflow: auto;
 }
 
 .box1_task {
@@ -222,14 +200,6 @@ main {
   margin-left: 5px;
   color: red;
 }
-
-.box1_task span.false {
-  display: none;
-}
-.box1_task span.true {
-  opacity: 1;
-}
-
 .box1_task button {
   font-size: large;
   padding: 1% 1%;
@@ -237,9 +207,147 @@ main {
   border: none;
   color: var(--sec);
   border-radius: 8px;
-  margin-left: 2%;
-}/*# sourceMappingURL=style.css.map */
-
-#page1 {
-  display: block;
 }
+
+/* Daily Planner Section */
+#page2 {
+  color: var(--sec);
+}
+
+#daily_planner {
+  width: 100%;
+  height: 90%;
+  background-color: var(--tri1);
+  padding: 2%;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  margin-top: 1%;
+  border-radius: 10px;
+  overflow: auto;
+  gap: 10px;
+  flex-wrap: wrap;
+  scrollbar-width: none;
+}
+
+.task_chit {
+  background-color: var(--tri3);
+  width: 49%;
+  height: 13%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.task_chit h3 {
+  position: absolute;
+  left: 1%;
+  top: 2px;
+  font-size: small;
+  color: var(--sec);
+}
+.task_chit input {
+  margin-left: 7%;
+  margin-top: 5px;
+  background-color: var(--tri3);
+  color: var(--sec);
+  border: none;
+  outline: none;
+  font-size: 23px;
+  width: 100%;
+}
+.task_chit input::-moz-placeholder {
+  color: var(--sec);
+}
+.task_chit input::placeholder {
+  color: var(--sec);
+}
+
+#moti_nav {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1%;
+}
+
+.motivation_wrapper {
+  width: 100%;
+  height: 95%;
+  margin: 10px 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.motivation_container {
+  width: 80%;
+  height: 80%;
+  background-color: var(--tri2);
+  border-radius: 30px;
+  position: relative;
+  border: 4px solid var(--tri3);
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  z-index: 9;
+}
+
+.motivation_container::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--tri2);
+  filter: blur(100px);
+  border-radius: 30px;
+  z-index: 8;
+}
+
+.motivation_header {
+  width: 33%;
+  height: 18%;
+  background-color: var(--pri);
+  border-radius: 20px;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2%;
+}
+.motivation_header h1 {
+  font-size: 34px;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.motivation_content {
+  width: 100%;
+  height: 55%;
+  border-radius: 20px;
+  z-index: 10;
+  padding: 3% 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.motivation_content p {
+  font-size: 35px;
+  color: var(--tri3);
+  font-weight: 700;
+  text-align: center;
+}
+
+.motivation_author {
+  width: auto;
+  height: auto;
+  border-radius: 20px;
+  z-index: 10;
+  align-self: flex-end;
+  padding-right: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.motivation_author h1 {
+  font-size: 34px;
+  font-weight: 900;
+  font-style: italic;
+}/*# sourceMappingURL=style.css.map */
