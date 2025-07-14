@@ -385,3 +385,44 @@ main {
         
     }
 }
+
+#page4 {
+    display: block;
+}
+
+.pomodoro_container {
+    width: 100%;
+    height:90%;
+    // background-color: red;
+    margin-top: 1%;
+    position: relative;
+
+    h1{
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        font-size: 120px;
+        font-weight: 500;
+    }
+    .pomo_btns{
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        
+        .pomoBtn {
+            font-size: 30px;
+            margin-right: 10px;
+            padding: 5px 25px;
+            border-radius: 40px;
+            border: none;
+            box-shadow: 4px 4px 4px black;
+            font-weight: 500;
+        }
+        .pomoBtn:active {
+            scale: 0.99;
+            box-shadow: 0px 0px 0px;
+        }
+    }
+}
