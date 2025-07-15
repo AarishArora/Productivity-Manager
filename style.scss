@@ -4,6 +4,8 @@
     --tri1: #CEAB93;
     --tri2: #E3CAA5;
     --tri3: #725f52;
+    --blue: rgb(0, 140, 255);
+    --green: rgb(114, 188, 114);
 }
 
 @font-face {
@@ -120,19 +122,22 @@ main {
     // right: 0%;
     background-color: rgba(0, 0, 0, 0.552);
     color:var(--sec);
-    padding: 2px 8px;
+    padding: 2px 10px;
     // margin: 3% 1%;
     border-radius: 20%;
     border: 1px solid rgb(0, 0, 0);
     font-weight: 600;
-    font-size: medium;
-    transition: all ease 0.2s;
+    font-size: 25px;
+    transition: all ease 0.1s;
     
 }
 .btn:hover {
         cursor: pointer;
-        transform: scale(1.2);
+        
     }
+.btn:active {
+    transform: scale(0.9);
+}
 
 #todo_container {
     // background-color: rgb(235, 107, 107);
@@ -162,7 +167,7 @@ main {
         background-color: var(--tri1);
         position: relative;
         
-        input {
+        #todo_input {
             height: 17%;
             outline: none;
             background-color:var(--sec);
@@ -192,6 +197,12 @@ main {
         }
     }
 }
+
+#todo_box2 .todo_box2_imp #checkbox {
+    transform: scale(1.5);
+    margin: 2%;
+}
+
 #todo_box1 {
     background-color: var(--tri1);
     width: 60%;
@@ -230,6 +241,8 @@ main {
         border-radius: 8px;
     }
 }
+
+
 
 /* Daily Planner Section */
 
@@ -386,9 +399,6 @@ main {
     }
 }
 
-#page4 {
-    display: block;
-}
 
 .pomodoro_container {
     width: 100%;
@@ -405,6 +415,17 @@ main {
         font-size: 120px;
         font-weight: 500;
     }
+
+    h4{
+        position: absolute;
+        top: 18%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: var(--green);
+        font-size: 25px;
+        padding: 2px 14px;
+    }
+
     .pomo_btns{
         position: absolute;
         top: 55%;
@@ -425,4 +446,8 @@ main {
             box-shadow: 0px 0px 0px;
         }
     }
+}
+
+button:hover{
+    cursor: pointer;
 }

@@ -135,3 +135,79 @@ function motivational_quote() {
     fetchQuote()
 }
 motivational_quote();
+
+
+
+function pomodoro_timer() {
+    let timer = document.querySelector(".pomodoro_container h1");
+    let startBtn = document.querySelector(".start");
+    let pauseBtn = document.querySelector(".pause");
+    let resetBtn = document.querySelector(".reset");
+    let session = document.querySelector(".pomodoro_container h4");
+    let isWorkSession = true;
+
+    let totalSeconds = 25*60;
+    let timeInterval = null
+
+    function updateTimer() {
+        let minutes = Math.floor(totalSeconds/60);
+        let seconds = totalSeconds % 60;
+
+        timer.innerHTML = `${String(minutes).padStart("2","0")}:${String(seconds).padStart("2","0")}`
+    }
+
+    function startTimer() {
+        clearInterval(timeInterval);
+
+        if(isWorkSession) {
+            timeInterval = setInterval(() => {
+                if(totalSeconds>0) {
+                    totalSeconds--
+                    updateTimer();
+                }
+                else {
+                    isWorkSession = false;
+                    clearInterval(timeInterval);
+                    timer.innerHTML = '05:00';
+                    session.innerHTML = "Take a Break";
+                    session.style.backgroundColor = "var(--blue)"
+                    totalSeconds = 5*60;
+                }
+            }, 1000);
+        }
+        else {
+
+            timeInterval = setInterval(function () {
+                if(totalSeconds>0) {
+                    totalSeconds--;
+                    updateTimer();
+                }
+                else {
+                    isWorkSession = true;
+                    clearInterval(timeInterval)
+                    timer.innerHTML = "25:00";
+                    session.innerHTML = "Work Session";
+                    session.style.backgroundColor = "var(--green)"
+                    totalSeconds = 25*60;
+                }
+            },1000)
+        }
+    }
+
+    function pauseTimer() {
+        clearInterval(timeInterval);
+    }
+
+    function resetTimer() {
+        totalSeconds = 25*60;
+        clearInterval(timeInterval);
+        updateTimer();
+
+    }
+    startBtn.addEventListener("click",startTimer);
+    pauseBtn.addEventListener("click",pauseTimer);
+    resetBtn.addEventListener("click",resetTimer);
+
+    
+}
+pomodoro_timer();
