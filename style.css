@@ -46,14 +46,71 @@ main {
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 20px;
-  padding: 2% 4%;
+  padding: 1% 4%;
   background-color: var(--pri);
   color: var(--sec);
 }
 
+#page0 .allFeatures {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+#page0 header {
+  height: 13rem;
+  width: 100%;
+  background: url(https://images.unsplash.com/photo-1592698117601-70c282996f9c?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-position: center;
+  background-size: cover;
+  border-radius: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 2rem;
+  text-shadow: 2px 2px 5px black;
+  box-shadow: 0px 0px 8px 0px black;
+}
+
+header .header1 h1 {
+  font-weight: 500;
+  font-size: 50px;
+}
+header .header1 h2 {
+  margin-top: -2%;
+  font-family: chillax;
+  font-weight: 100;
+}
+header .header1 h4 {
+  font-size: 25px;
+  font-weight: 100;
+  opacity: 0.8;
+}
+
+header .header2 h2 {
+  font-weight: 500;
+  font-size: 48px;
+  margin-bottom: -5%;
+  margin-top: -18%;
+}
+header .header2 h3 {
+  font-size: 23px;
+  font-weight: 500;
+  margin-bottom: 7%;
+  font-family: chillax;
+}
+header .header2 h4 {
+  font-family: chillax;
+  font-size: 16px;
+  font-weight: 100;
+}
+
 .cards {
-  width: 240px;
-  height: 350px;
+  width: 230px;
+  height: 260px;
   position: relative;
   border-radius: 5%;
   overflow: hidden;
@@ -174,7 +231,7 @@ main {
   padding: 2% 8%;
   font-size: larger;
   position: absolute;
-  bottom: 10%;
+  bottom: 2%;
   left: 50%;
   transform: translate(-50%, 0%);
 }
@@ -219,8 +276,21 @@ main {
   border-radius: 8px;
 }
 
+#page1 {
+  padding-top: 6%;
+}
+
+#page3 {
+  padding-top: 6%;
+}
+
+#page4 {
+  padding-top: 6%;
+}
+
 /* Daily Planner Section */
 #page2 {
+  padding-top: 6%;
   color: var(--sec);
 }
 
@@ -323,7 +393,7 @@ main {
   margin-bottom: 2%;
 }
 .motivation_header h1 {
-  font-size: 34px;
+  font-size: 28px;
   font-weight: 900;
   font-style: italic;
 }
@@ -406,5 +476,38 @@ main {
 }
 
 button:hover {
+  cursor: pointer;
+}
+
+nav {
+  position: relative;
+  top: 0;
+  z-index: 99;
+  height: 10px;
+  width: 100%;
+  margin-bottom: 35px;
+}
+
+.nav-in {
+  display: flex;
+  background-color: var(--tri3);
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10px;
+  border-radius: 10px;
+}
+
+.nav-in h2 {
+  font-size: 25px;
+  font-family: REleg;
+  font-weight: 700;
+}
+
+.theme {
+  font-size: small;
+  background-color: var(--pri);
+  padding: 8px 5px;
+  border-radius: 10px;
+  transition: all ease 0.2s;
   cursor: pointer;
 }/*# sourceMappingURL=style.css.map */
